@@ -33,3 +33,6 @@ $(document).ready(function () {
 $(window).load(function () {
     $('#cover').fadeOut();
 });
+$(window).on('load', function () {
+    alert("Window Loaded");
+});
