@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+<div class="container">
+	<h1 class=" heading text-center my-2">BLOGS</h1>
+	<% if(currentUser){ %>
+	<a href="/blogs/new">add new</a>
+	<% } %>
+	<div id="blogs" class="border rounded-lg p-4 my-3 shadow-lg">
+		<% blogs.forEach(function(blog){ %>
+		<div class="row m-3 p-3 border-bottom rounded-lg blog shadow">
+			<div class="col-12 col-md-6 col-lg-5 col-xl-3 text-center text-md-left">
+				<img class="img-fluid rounded-lg one-edge-shadow" src="<%= blog.image %>">
+			</div>
+			<div class="col-12 col-md-6 col-lg-7 col-xl-9">
+				<div class="d-block flex-column justify-content-between">
+					<div>
+						<a class="header text-shadow text-center text-md-left text-dark" href="/blogs/<%= blog._id %>">
+							<h2 class="d-inline-block"><%= blog.title %></h2>
+						</a>
+						<div class="text-muted">
+							<span><%= blog.created.toDateString() %></span>
+						</div>
+					</div>
+					<div class="cursive text-justify">
+						<p class=""><%- blog.body.substring(0,90) %>...</p>
+					</div>
+					<div class="">
+						<a class="btn btn-outline-success" href="/blogs/<%= blog._id %>">
+							<p class="m-0">Read More ></p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% }); %>
+	</div>
+</div>
+<% include ../partials/footer %>

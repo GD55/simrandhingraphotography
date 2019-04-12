@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+<div class="container">
+	<h1 class="heading">Video Gallery</h1>
+	<% if(currentUser){ %>
+	<a href="/videos/new">add new</a>
+	<% } %>
+	<div class="row p-4 border rounded-lg m-4 shadow-lg">
+		<% videos.forEach(function(video){ %>
+		<div class="text-center col-lg-6 col-12 p-3">
+			<div class="border embed-responsive embed-responsive-16by9 one-edge-shadow rounded-lg">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= video.link %>"
+					allowfullscreen>
+				</iframe>
+			</div>
+			<a class="text-decoration-none text-dark" href="/videos/<%= video._id %>">
+				<h3 class="pt-3 heading text-shadow"><%= video.title %></h3>
+			</a>
+		</div>
+		<% }); %>
+	</div>
+</div>
+<% include ../partials/footer %>

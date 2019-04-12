@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<div class="container mt-5">
+	<div class="p-5 border rounded-lg shadow-lg m-5">
+		<div class="border embed-responsive embed-responsive-16by9 one-edge-shadow rounded-lg">
+			<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= video.link %>" allowfullscreen>
+			</iframe>
+		</div>
+		<h3 class="pt-3 heading text-shadow text-center"><%= video.title %></h3>
+		<% if(currentUser){ %>
+		<p>Order:<%= video.order%></p>
+		<form id="delete" action="/videos/<%= video._id%>?_method=DELETE" method="POST">
+			<a class="btn btn-outline-warning" href="/videos/<%= video._id%>/edit">Edit</a>
+			<button class="btn btn-outline-danger">DELETE</button>
+		</form>
+		<% } %>
+	</div>
+</div>
+<% include ../partials/footer %>

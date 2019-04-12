@@ -1,0 +1,319 @@
+body {
+  background-color: black;
+}
+
+.slideshow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 60s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+  background-image: url(/images/landing/l1.jpg)
+}
+
+.slideshow li:nth-child(2) {
+  background-image: url(/images/landing/l2.jpg);
+  animation-delay: 6s;
+}
+
+.slideshow li:nth-child(3) {
+  background-image: url(/images/landing/l3.jpg);
+  animation-delay: 12s;
+}
+
+.slideshow li:nth-child(4) {
+  background-image: url(/images/landing/l4.jpg);
+  animation-delay: 18s;
+}
+
+.slideshow li:nth-child(5) {
+  background-image: url(/images/landing/l5.jpg);
+  animation-delay: 24s;
+}
+
+.slideshow li:nth-child(6) {
+  background-image: url(/images/landing/l6.jpg);
+  animation-delay: 30s;
+}
+
+.slideshow li:nth-child(7) {
+  background-image: url(/images/landing/l7.jpg);
+  animation-delay: 36s;
+}
+
+.slideshow li:nth-child(8) {
+  background-image: url(/images/landing/l8.jpg);
+  animation-delay: 42s;
+}
+
+.slideshow li:nth-child(9) {
+  background-image: url(/images/landing/l9.jpg);
+  animation-delay: 48s;
+}
+
+.slideshow li:nth-child(10) {
+  background-image: url(/images/landing/l10.jpg);
+  animation-delay: 54s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  5% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    opacity: 1
+  }
+  15% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+
+.no-cssanimations .slideshow li {
+  opacity: 1;
+}
+
+/* nav */
+
+nav {
+  width: 100%;
+  height: 100%;
+  font-family: "Dokdo";
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 2;
+  opacity: 0;
+  animation: 1s slidefade 1s forwards;
+}
+
+@keyframes slidefade{
+  100%{
+      opacity: 0.8;
+  }
+}
+
+a {
+  font-size: 30px;
+  margin: 15px;
+  color: white;
+  text-shadow: 2px 2px 8px rgb(0, 0, 0);
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 1;
+  animation: shake 0.5s; 
+  /* When the animation is finished, start again */
+  animation-iteration-count: 1; 
+}
+
+.sign{
+  position: absolute;
+  bottom: 3vh;
+  right: 3vw;
+  color: #fff;
+  z-index: 2;
+}
+
+.sign:hover {
+  animation: shake 0.5s; 
+  /* When the animation is finished, start again */
+  animation-iteration-count: 1; 
+  cursor: pointer;
+}
+
+#camera{
+  position: relative;
+  max-height: 20vh;
+  max-width: 20vw;
+  opacity: 0;
+  margin-bottom: 100px;
+  animation: 1s slidefade2 2s forwards;
+}
+
+@keyframes slidefade2{
+  100%{
+      opacity: 0.8;
+      margin-bottom: 0px;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+/* preloader */
+
+#cover {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 9999;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: Montserrat;
+}
+
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  color: #217216;
+  display: inline-block;
+  margin-left: 25px;
+  font-size: 30px;
+  text-shadow: 1px 1px 4px rgb(70, 65, 64);
+}
+
+@media (max-width: 800px) {
+  .text {
+    margin-left: 10px;
+    font-size: 15px;
+  }
+
+  a{
+    margin: 10px;
+    font-size: 20px;
+  }
+
+  nav{
+    justify-content: flex-end;
+  }
+
+  .slideshow li:nth-child(1) {
+    background-image: url(/images/landing/p1.jpg)
+  }
+  
+  .slideshow li:nth-child(2) {
+    background-image: url(/images/landing/p2.jpg);
+    animation-delay: 6s;
+  }
+  
+  .slideshow li:nth-child(3) {
+    background-image: url(/images/landing/p3.jpg);
+    animation-delay: 12s;
+  }
+  
+  .slideshow li:nth-child(4) {
+    background-image: url(/images/landing/p4.jpg);
+    animation-delay: 18s;
+  }
+  
+  .slideshow li:nth-child(5) {
+    background-image: url(/images/landing/p5.jpg);
+    animation-delay: 24s;
+  }
+  
+  .slideshow li:nth-child(6) {
+    background-image: url(/images/landing/p6.jpg);
+    animation-delay: 30s;
+  }
+  
+  .slideshow li:nth-child(7) {
+    background-image: url(/images/landing/p7.jpg);
+    animation-delay: 36s;
+  }
+  
+  .slideshow li:nth-child(8) {
+    background-image: url(/images/landing/p8.jpg);
+    animation-delay: 42s;
+  }
+  
+  .slideshow li:nth-child(9) {
+    background-image: url(/images/landing/p9.jpg);
+    animation-delay: 48s;
+  }
+  
+  .slideshow li:nth-child(10) {
+    background-image: url(/images/landing/p10.jpg);
+    animation-delay: 54s;
+  }
+}
+
+.bounceball {
+  position: relative;
+  display: inline-block;
+  height: 84px;
+  width: 30px;
+}
+
+.bounceball:before {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #135809;
+  transform-origin: 50%;
+  animation: bounce 500ms alternate infinite ease;
+}
+
+@keyframes bounce {
+  0% {
+    top: 80px;
+    height: 10px;
+    border-radius: 120px 120px 40px 40px;
+    transform: scaleX(2);
+  }
+  35% {
+    height: 30px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}

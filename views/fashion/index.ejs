@@ -1,0 +1,42 @@
+<% include ../partials/header %>
+<div class="contain">
+    <h1 class="heading">Fashion Gallery</h1>
+    <% if(currentUser){ %>
+    <a href="/fashion/new">add new</a>
+    <% } %>
+    <div class="card-columns pb-4">
+        <% var i=0; %>
+        <% fashionImages.forEach(function(fashionImage){ %>
+        <!-- <a href="/" class="card"> -->
+        <div class="card rounded-lg">
+            <img class="card-img-top im " data-no="<%=i%>" src="<%=fashionImage.img%>">
+            <% if(currentUser){ %>
+            <div class="card-body">
+                <form id="delete" action="/fashion/<%= fashionImage._id%>?_method=DELETE" method="POST">
+                    <a class="btn btn-outline-warning"
+                        href="/fashion/<%= fashionImage._id%>/edit">Order:<%=fashionImage.order%></a>
+                    <button class="btn btn-outline-danger">DELETE</button>
+                </form>
+            </div>
+            <% } %>
+            <% i = i+1; %>
+        </div>
+        <!-- </a> -->
+        <% }); %>
+    </div>
+</div>
+<div class="modal">
+    <!-- The Close Button -->
+    <span class="close text-center border rounded-circle" onclick="closeModal()">
+        <span class=""><img class="mt-2 pt-1" src="/images/galleryIcon.png" alt=""></span></span>
+    <div class="h-100 d-flex align-content-center">
+        <div class="m-auto">
+            <!-- Modal Content (The Image) -->
+            <img id="modalContent" onclick="zoom()">
+            <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+            <span class="next" onclick="plusSlides(1)">&#10095;</span>
+        </div>
+    </div>
+</div>
+<script src="/js/gallery.js"></script>
+<% include ../partials/footer %>

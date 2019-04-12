@@ -1,0 +1,73 @@
+<% include ./partials/header %>
+<div class="contain">
+    <div class="row">
+        <div class="col-md-7 col-12">
+            <h1 class="heading">Contact Us</h1>
+            <div class="form">
+                <form action="/contactUs" method="Post">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input class="form-control" type="text" name="name" placeholder="name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input class="form-control" type="email" name="email" placeholder="e-mail" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i
+                                        class="fas fa-mobile-alt"></i></span>
+                            </div>
+                            <input class="form-control" type="tel" name="no" placeholder="Phone no." required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i
+                                        class="fas fa-pencil-alt"></i></span>
+                            </div>
+                            <input class="form-control" type="text" name="subject" placeholder="Subject" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" type="text" name="text" placeholder="description" rows="7"
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-5 col-12 mt-3">
+            <div class="border rounded-lg shadow p-3 mt-5 mb-4">
+                <h3 class="heading text-center pb-2">Find Us Here</h3>
+                <div class="border embed-responsive embed-responsive-16by9 one-edge-shadow rounded-lg">
+                    <iframe class="embed-responsive-item" frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJz3A0gxX9DDkRCRhQM1WX6lg&key=AIzaSyClL2m06nmX--AwqkuJ1flsmQVKRLa5xkQ"
+                        allowfullscreen></iframe>
+                </div>
+                <div>
+                    <h3 class="heading mt-4">Contact Info :-</h3>
+                    <p class="text-muted mt-2">
+                        <strong> Mobile no. : </strong> +91 9354879985 <br>
+                        <strong>E-mail id &nbsp : </strong> simrandhingraphotography@gmail.com<br>
+                        <strong>Instagram : </strong> <a target="_blank"
+                            href="https://www.instagram.com/simrandhingraphotography/">simrandhingraphotography</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% include ./partials/footer %>

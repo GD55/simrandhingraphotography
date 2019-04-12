@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<div class="container">
+	<h1 class="heading">Edit Order <%= fashionImage.order%></h1>
+	<div class="form">
+		<form action="/fashion/<%= fashionImage._id %>?_method=PUT" method="POST">
+			<div class="form-group">
+				<label>Image :</label>
+				<input class="form-control" type="text" name="fashionImage[img]" value="<%=fashionImage.img%>">
+			</div>
+			<div class="form-group">
+				<label>Order :</label>
+				<input class="form-control" type="number" name="fashionImage[order]" value="<%= fashionImage.order%>">
+			</div>
+			<input class="btn btn-lg btn-primary btn-block" type="submit" name="">
+		</form>
+	</div>
+</div>
+<% include ../partials/footer %>
