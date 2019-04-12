@@ -8,6 +8,11 @@ var max = images.length;
 // add event listeners
 for (var i = 0; i < max; i++) {
     images[i].addEventListener("click", function () {
+        if (modalContent.style.maxHeight == "100%") {
+            modalContent.style.maxHeight = "100vh";
+            modalContent.style.maxWidth = "80vw";
+            modalContent.style.cursor = "zoom-in";
+        }
         myModal.style.display = "block";
         myModal.dataset.no = this.dataset.no;
         modalContent.src = this.src;
