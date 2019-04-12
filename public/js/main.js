@@ -30,6 +30,6 @@ $(document).ready(function () {
 });
 
 //preloader
-$(window).onload(function () {
+$(window).load(function () {
     $('#cover').fadeOut();
 });
