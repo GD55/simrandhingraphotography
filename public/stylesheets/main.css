@@ -48,7 +48,7 @@ li.nav-item {
 /* footer css */
 
 .footer {
-    height: 150px;
+    height: 100px;
     width: 100%;
     color: white;
     border-top: black 1px solid;
@@ -61,17 +61,21 @@ li.nav-item {
 }
 
 .footericons {
-    font-size: 40px;
-    padding: 10px;
+    font-size: 20px;
+    padding: 5px;
 }
 
 .footertext {
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Acme', sans-serif;
 }
 
-.footertext a{
+.footertext a,.footericons a i{
     opacity: 0.75;
+}
+
+.footertext p{
+    margin: 0;
 }
 
 .footertext a:hover{
@@ -79,6 +83,7 @@ li.nav-item {
 }
 
 .footericons a i:hover {
+    opacity: 1;
     animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
@@ -281,9 +286,11 @@ div.card:hover {
     #modal-content {
         width: 100%;
     }
+    .footer{
+        height: 60px;
+    }
     .footericons {
-        font-size: 20px;
-        padding: 5px;
+        font-size: 14px;
     }
     .footertext {
         font-size: 14px;
