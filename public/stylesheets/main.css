@@ -523,7 +523,7 @@ body {
         font-size: 15px;
     }
     h1.heading {
-        font-size: 40px;
+        font-size: 30px;
         padding-top: 50px;
         padding-bottom: 0px;
     }
@@ -587,10 +587,22 @@ body {
     }
     #about-me-text {
         font-size: 1.2rem;
+        padding: 15px!important;
     }
     #aboutMe {
         margin-left: 5vw;
         margin-right: 5vw;
+    }
+    #videoIndex{
+        padding: 0px!important;
+    }
+    #videoShow{
+        padding: 5px!important;
+        margin: 5px!important;
+    }
+    .contain{
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
     }
 }
 
