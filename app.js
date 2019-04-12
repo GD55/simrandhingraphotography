@@ -198,7 +198,13 @@ app.post('/modelsWanted', upload.array('photos', 12), function (req, res) {
 		}
 		console.log('Message sent successfully!');
 		for (var i = 0; i < req.files.length; i++) {
-			fs.unlinkSync(req.files[i].destination + req.files[i].filename);
+			fs.unlink(req.files[i].destination + req.files[i].filename, function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("File was deleted");
+				}
+			});
 		}
 	});
 	res.redirect('/modelsWanted');
