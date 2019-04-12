@@ -604,6 +604,20 @@ body {
         margin-left: 2.5vw;
         margin-right: 2.5vw;
     }
+    #blogs{
+        padding: 10px!important;
+    }
+    .blog{
+        padding: 5px!important;
+        margin: 0px!important;
+    }
+    #showBlogs{
+        padding: 10px!important;
+        margin: 10px!important;
+    }
+    #blog-body p{
+        font-size: 15px;
+    }
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
