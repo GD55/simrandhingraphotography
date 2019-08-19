@@ -13,6 +13,7 @@ var express = require("express"),
 	Blog = require("./models/blogs"),
 	Video = require("./models/videos"),
 	User = require("./models/user"),
+	port = process.env.PORT || 3000,
 	expressSanitizer = require("express-sanitizer"),
 	methodOverride = require("method-override");
 
@@ -675,6 +676,6 @@ app.delete("/videos/:id", isLoggedIn, function (req, res) {
 	//redirect
 });
 
-app.listen(process.env.PORT, process.env.IP, function () {
-	console.log("Simran server started on port 3000");
+app.listen(port, process.env.IP, function () {
+	console.log("Simran server started on port " + port);
 });
