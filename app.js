@@ -13,13 +13,14 @@ var express = require("express"),
 	Blog = require("./models/blogs"),
 	Video = require("./models/videos"),
 	User = require("./models/user"),
-	port = process.env.PORT || 3000,
 	expressSanitizer = require("express-sanitizer"),
 	methodOverride = require("method-override");
 
 
+require('dotenv').config({ path: __dirname + '/.env' });
+
 // mongoose.connect("mongodb://localhost/simran", { useNewUrlParser: true });
-mongoose.connect("mongodb+srv://simran:QpzfpWC5M3yrm6G@photography-omvnp.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
@@ -30,8 +31,8 @@ app.use(expressSanitizer());
 var transport = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
-		user: 'simrandhingraphotographym@gmail.com',
-		pass: 'htP9WSUrhVcY7Hh'
+		user: process.env.NodemailerUser,
+		pass: process.env.NademailerPassword
 	}
 });
 var storage = multer.diskStorage({
@@ -174,9 +175,9 @@ app.post('/modelsWanted', upload.array('photos', 12), function (req, res) {
 	var arr = [];
 	for (var i = 0; i < req.files.length; i++) {
 		arr[i] =
-			{
-				path: String(req.files[i].path)
-			}
+		{
+			path: String(req.files[i].path)
+		}
 	}
 
 	var message = {
@@ -676,6 +677,6 @@ app.delete("/videos/:id", isLoggedIn, function (req, res) {
 	//redirect
 });
 
-app.listen(port, process.env.IP, function () {
-	console.log("Simran server started on port " + port);
+app.listen(process.env.PORT, process.env.IP, function () {
+	console.log("Simran server started on port " + process.env.PORT);
 });
